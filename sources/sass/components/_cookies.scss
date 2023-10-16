@@ -1,0 +1,58 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.cookies{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100%;
+    max-width: 30vw;
+    border: 2px solid fun.color('secondary');
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: fun.color('white');
+    transition: 1s ease right;
+    opacity: 0;
+    pointer-events: none;
+    &.active{
+        opacity: 1;
+        pointer-events: inherit;
+    }
+    &.animate{
+        opacity: 1;
+        right: -100%;
+    }
+    &__ctn{
+        position: relative;
+        z-index: 1;
+        @include mix.flex;
+        gap: 20px;
+        p{
+            font-size:1.5vh;
+            color: fun.color('primary');
+            a{
+                color: fun.color('secondary');
+                text-decoration: underline;
+                &:hover{
+                    text-decoration: inherit
+                }
+            }
+        }
+    }
+    &__flex{
+        @include mix.flex;
+        gap: 10px;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .cookies{
+        max-width: 300px;
+        &__ctn{
+            p{
+                font-size: .8rem;
+            }
+        }
+    }
+}

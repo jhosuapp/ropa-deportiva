@@ -1,0 +1,7 @@
+body::-webkit-scrollbar{
+    width: 0 !important;
+    opacity: 0;
+    z-index: -1;
+    background-color: transparent;
+    width: 10px;
+}

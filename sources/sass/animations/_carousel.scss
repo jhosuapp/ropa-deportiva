@@ -1,0 +1,18 @@
+.swiper-home .swiper-slide{
+    opacity: 0;
+}
+.swiper-home.aos-animate .swiper-slide{
+    animation: carousel-reveal 1s ease var(--index) forwards 1;
+}
+
+
+@keyframes carousel-reveal {
+    from {
+        opacity: 1;
+        transform: translateX(100vw);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

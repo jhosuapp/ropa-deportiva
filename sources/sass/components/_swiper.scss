@@ -1,0 +1,118 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+.swiper-home{
+    width: 110%;
+    left: -5%;
+    margin-bottom: 5vh;
+    &__limit.ctm-fonts{
+        padding-bottom: 5vh;
+    }
+    &__limit{
+        .animation-tx-reveal{
+            display: flex;
+        }
+        h6, h6 span{
+            font-weight: 400 !important;
+        }
+        h6{
+            margin-top: 20px;
+        }
+        .secondary{
+            color: fun.color('secondary');
+        }
+        .tertiary{
+            color: fun.color('tertiary');
+        }
+    }
+    .swiper-wrapper{
+        transition-timing-function : linear;
+        transition-duration: .5s;
+    }
+    .swiper-slide{
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        &:hover,
+        &.swiper-slide-next{
+            img{
+                transform: scale(1.1);
+            }
+        }
+        &.swiper-slide-next{
+            &:hover{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        &:nth-child(odd){
+            .ctm-fonts{
+                p{
+                    color: fun.color('secondary');
+                }
+            }
+        }
+        &:hover{
+            .ctm-fonts{
+                h5, p, b{
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition-delay: 0 !important;
+                }
+            }
+        }
+    }
+    .ctm-fonts{
+        position: absolute;
+        z-index: 1;
+        bottom: 5%;
+        left: 5%;
+        h5, p, b{
+            opacity: 0;
+            transition: 1s ease;
+            transform: translateY(50px);
+            transition-property: opacity, transform;
+        }
+        h5{
+            color: fun.color('white');
+        }
+        p{
+            color: fun.color('tertiary');
+            transition-delay: .1s;
+        }
+        h5{
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        b{
+            transition-delay: .1s;
+        }
+    }
+    picture{
+        height: 55vh;
+        display: block;
+        img, source{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1s ease transform;
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .swiper-home{
+        width: 100%;
+        left: 5%;
+        picture{
+            max-height: 400px;
+        }
+        .ctm-fonts{
+            h5, p, b{
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0 !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+//PALETA DE COLORES
+$palette:(
+    'white': #fff,
+    'black': #000,
+    'primary': rgb(0, 22, 67),
+    'secondary': rgba(0, 190, 255),
+    'tertiary': rgba(23,241,209),
+);
+//BREAKPOINTS
+$breakpoints: (
+    'desktop': 1440px,
+    'laptop': 1280px,
+    'laptop-small': 1100px,
+    'ipad-big': 992px,
+    'ipad-small': 768px,
+    'mobile': 576px
+);
+//OTHERS
+$transition-duration: 0.3s;
+$limit-width: 1400px;

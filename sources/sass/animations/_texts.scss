@@ -1,0 +1,52 @@
+.animation-tx,
+.personality-animation.aos-animate .animation-tx-reveal{
+    span{
+        animation: text-reveal 1.5s ease 1 var(--index) forwards;
+        opacity: 0;
+    }
+}
+.personality-animation.aos-animate .animation-tx-reveal-secondary{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    span{
+        opacity: 0;
+        animation: text-reveal-secondary 1s ease 1 var(--index) forwards;
+        margin-right: 5px;
+    }
+}
+
+.personality-animation .animation-tx-reveal,
+.personality-animation .animation-tx-reveal-secondary{
+    span{
+        opacity: 0;
+    }
+}
+
+@keyframes text-reveal{
+    from{
+        opacity: 1;
+        transform: translateX(200px);
+    }
+    25%{
+        transform: translateX(-15px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes text-reveal-secondary {
+    from{
+        opacity: 1;
+        transform: translateY(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

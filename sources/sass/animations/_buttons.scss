@@ -1,0 +1,25 @@
+.personality-animation{
+    .btn--secondary{
+        opacity: 0;
+    }
+}
+.personality-animation.aos-animate {
+    .btn--secondary{
+        opacity: 0;
+        animation: reveal-btn .5s ease 1 var(--index) forwards;
+    }
+}
+
+@keyframes reveal-btn {
+    from{
+        opacity: 1;
+        transform: scale(0.9)
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

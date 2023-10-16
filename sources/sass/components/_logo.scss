@@ -1,0 +1,280 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.logo{
+    display: flex;
+    &__number{
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+        span{
+            position: relative;
+            &:first-child{
+                width: 30px;
+                height: 135px;
+            }
+            &:first-child,
+            &:nth-child(2){
+                &::before{
+                    content: "";
+                    position: absolute;
+                    transform: rotate(225deg);
+                    top: -23px;
+                    right: 20px;
+                    width: 0;
+                    height: 0;
+                    border-left: 35px solid fun.color('secondary');
+                    border-top: 35px solid transparent;
+                    border-bottom: 35px solid transparent;
+                }
+            }
+            &:first-child,
+            &:nth-child(2),
+            &:last-child{
+                background-color: fun.color('primary');
+            }
+            &:nth-child(2){
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                &::before{
+                    top: -77px;
+                    left: -10px;
+                    border-left: 65px solid fun.color('secondary');
+                    border-top: 65px solid transparent;
+                    border-bottom: 65px solid transparent;
+                }
+            }
+            &:last-child{
+                width: 135px;
+                height: 135px;
+                border-radius: 135px;
+                left: -10px;
+            }
+        }
+    }
+    &__percent{
+        position: relative;
+        display: flex;
+        width: 80px;
+        span{
+            height: auto;
+            &:first-child{
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 0; 
+                    height: 0; 
+                    border-left: 45px solid fun.color('secondary');
+                    border-top: 45px solid transparent;
+                    border-bottom: 45px solid transparent; 
+                    transform: rotate(-135deg);
+                    top: 10px;
+                }
+            }
+            &:nth-child(2),
+            &:last-child{
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                background-color: fun.color('primary');
+            }
+            &:nth-child(2){
+                left: -30px;
+            }
+            &:last-child{
+                bottom: 0;
+                left: 35px;
+            }
+        }
+    }
+    &--small{
+        padding-left: 10px;
+        .logo__number{
+            span{
+                position: relative;
+                &:first-child{
+                    width: 12.5px;
+                    height: 55px;
+                }
+                &:first-child,
+                &:nth-child(2){
+                    &::before{
+                        top: -10px;
+                        right: 7.5px;
+                        border-left: 15px solid fun.color('secondary');
+                        border-top: 15px solid transparent;
+                        border-bottom: 15px solid transparent;
+                    }
+                }
+                &:nth-child(2){
+                    width: 40px;
+                    height: 40px;
+                    &::before{
+                        top: -32px;
+                        left: -4px;
+                        border-left: 25px solid fun.color('secondary');
+                        border-top: 25px solid transparent;
+                        border-bottom: 25px solid transparent;
+                    }
+                }
+                &:last-child{
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+        .logo__percent{
+            width: 20px;
+            span{
+                &:first-child{
+                    &::before{
+                        border-left: 17.5px solid fun.color('secondary');
+                        border-top: 17.5px solid transparent;
+                        border-bottom: 17.5px solid transparent; 
+                        left: -5px;
+                        top: 15px;
+                    }
+                }
+                &:nth-child(2),
+                &:last-child{
+                    width: 20px;
+                    height: 20px;
+                }
+                &:nth-child(2){
+                    left: -15px;
+                    top: 10px;
+                }
+                &:last-child{
+                    left: 5px;
+                }
+            }
+        }
+    }
+    &--white{
+        .logo__number,
+        .logo__percent{
+            span{
+                &:first-child,
+                &:nth-child(2),
+                &:last-child{
+                    &::before{
+                        border-left-color: fun.color('white');
+                    }
+                }
+                &:first-child,
+                &:nth-child(2),
+                &:last-child{
+                    background-color: fun.color('white');
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-small')){
+    .logo{
+        &__number{
+            span{
+                position: relative;
+                &:first-child{
+                    width: 20px;
+                    height: 95px;
+                }
+                &:first-child,
+                &:nth-child(2){
+                    &::before{
+                        top: -17px;
+                        right: 15px;
+                        border-left: 25px solid fun.color('secondary');
+                        border-top: 25px solid transparent;
+                        border-bottom: 25px solid transparent;
+                    }
+                }
+                &:nth-child(2){
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50px;
+                    &::before{
+                        top: -55px;
+                        left: -7px;
+                        border-left: 45px solid fun.color('secondary');
+                        border-top: 45px solid transparent;
+                        border-bottom: 45px solid transparent;
+                    }
+                }
+                &:last-child{
+                    width: 95px;
+                    height: 95px;
+                }
+            }
+        }
+        &__percent{
+            width: 40px;
+            span{
+                &:first-child{
+                    &::before{
+                        border-left: 35px solid fun.color('secondary');
+                        border-top: 35px solid transparent;
+                        border-bottom: 35px solid transparent; 
+                    }
+                }
+                &:nth-child(2),
+                &:last-child{
+                    width: 40px;
+                    height: 40px;
+                }
+                &:nth-child(2){
+                    left: -20px;
+                }
+                &:last-child{
+                    left: 25px;
+                }
+            }
+        }
+        &--small{
+            padding-left: 4px;
+            .logo__number{
+                span{
+                    position: relative;
+                    &:first-child{
+                        width: 9.5px;
+                        height: 40px;
+                    }
+                    &:first-child,
+                    &:nth-child(2){
+                        &::before{
+                            top: -7px;
+                            right: 5px;
+                            border-left: 10px solid fun.color('secondary');
+                            border-top: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                        }
+                    }
+                    &:nth-child(2){
+                        width: 30px;
+                        height: 30px;
+                        &::before{
+                            top: -22px;
+                            left: -3px;
+                            border-left: 18.5px solid fun.color('secondary');
+                            border-top: 18.5px solid transparent;
+                            border-bottom: 18.5px solid transparent;
+                        }
+                    }
+                    &:last-child{
+                        width: 40px;
+                        height: 40px;
+                        left: -5px;
+                    }
+                }
+            }
+            .logo__percent{
+                display: none;
+            }
+        }
+    }
+}

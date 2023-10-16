@@ -1,0 +1,22 @@
+.personality-animation.aos-animate .home-banner__panel video{
+    opacity: 0;
+    animation: video-reveal 1s ease forwards .2s;
+}
+
+
+@keyframes video-reveal{
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.05);
+    }
+    50%{
+        transform: scale(1.07);
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}

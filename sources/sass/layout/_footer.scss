@@ -1,0 +1,75 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+footer,
+.footer{
+    background-color: fun.color('primary');
+    display: flex;
+    &__bottom{
+        padding: 4vh 0;
+        @include mix.flex($jc: space-between);
+    }
+    &__nav{
+        transition: .5s ease opacity;
+        &:hover{
+            opacity: .7;
+        }
+    }
+    &__networks{
+        display: flex;
+        gap: 10px;
+        a{
+            position: relative;
+            @include mix.flex;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                background-color: fun.color('secondary');
+                border-radius: 100px;
+                transition: .5s ease;
+                transition-property: height, width;
+                z-index: -1;
+            }
+            transition: .5s ease opacity;
+            &:hover{
+                opacity: .7;
+                &::after{
+                    width: 4.5vh;
+                    height: 4.5vh;
+                }
+            }
+        }
+        img{
+            width: 4vh;
+        }
+    }
+    &__nav{
+        a{
+            font-size: 1.8vh;
+            color: fun.color('white');
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-small')){
+    footer,
+    .footer{
+        &__bottom{
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        &__networks{
+            img{
+                width: 30px;
+            }
+        }
+        &__nav{
+            a{
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

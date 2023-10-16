@@ -1,0 +1,33 @@
+@use '../base/variables' as var;
+@use '../base/functions' as fun;
+.ctn{
+    width: 90%;
+    margin: auto;
+    max-width: var.$limit-width;
+    &--principal{
+        padding-top: 75px;
+    }
+    &--bottom{
+        padding-bottom: 10vh;
+    }
+    &--top{
+        padding-top: 10vh;
+    }
+}
+#main{
+    width: 100%;
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    #main{
+        overflow-x: hidden;
+    }
+    .ctn{
+        &--top{
+            padding-top: 6rem;
+        }
+        &--bottom{
+            padding-bottom: 6rem;
+        }
+    }
+}

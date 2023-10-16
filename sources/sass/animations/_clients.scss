@@ -1,0 +1,34 @@
+.home-clients{
+    picture{
+        animation: hidden-item 1.2s var(--index) ease infinite alternate;
+    }
+    img{
+        opacity: 0;
+    }
+    .personality-animation.aos-animate{
+        img{
+            animation: clients-reveal 1s ease var(--index) forwards 1;
+        }
+    }
+}
+
+
+@keyframes hidden-item{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes clients-reveal {
+    from {
+        opacity: 1;
+        transform: translateX(100vw);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

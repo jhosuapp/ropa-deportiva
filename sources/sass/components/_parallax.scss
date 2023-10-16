@@ -1,0 +1,55 @@
+@use '../base/functions' as fun;
+@use '../base/mixin' as mix;
+
+.parallax-cursor,
+.parallax-swiper{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    &__bg{
+        position: absolute;
+        box-shadow: 0 0 200px 100px rgba(0, 22, 67, .55);
+        width: 0px;
+        height: 50px;
+        transition: .5s linear all;
+        border-radius: 100%;
+    }
+}
+
+.parallax-swiper{
+    &__btn{
+        &.active{
+            width: 15vh;   
+            height: 15vh;
+            opacity: 1;
+            p{
+                opacity: 1;
+            }
+        }
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+        opacity: 0;
+        @include mix.flex;
+        background-color: fun.color('primary');
+        transition: .5s linear all;
+        p{
+            font-size: 2vh;
+            text-align: center;
+            color: fun.color('white');
+            opacity: 0;
+            transition: .5s ease opacity;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .parallax-cursor,
+    .parallax-swiper{
+        display: none;
+    }
+}
